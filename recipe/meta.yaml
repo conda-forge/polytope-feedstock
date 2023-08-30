@@ -24,7 +24,7 @@ requirements:
     - scipy >=0.18.0
     - cvxopt >=1.2.5
     - pytest
-    - matplotlib
+    - matplotlib-base
 
 test:
   imports:
