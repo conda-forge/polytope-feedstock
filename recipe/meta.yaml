@@ -1,4 +1,4 @@
-{% set version = "0.2.4" %}
+{% set version = "0.2.5" %}
 
 package:
   name: polytope
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/polytope/polytope-{{ version }}.tar.gz
-  sha256: bfc7467f61708849e54ee45199bcc2ece47fb4b45bcb34a0f231f0a51c8f982f
+  sha256: 75712395592e43703986e707474bde962bb6491c09f4bdccfc0ebd4c6c387f09
 
 build:
   noarch: python
@@ -16,7 +16,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=2.7
+    - python >=2.7,<3.12
   run:
     - networkx >=1.6
     - numpy >=1.10.0
