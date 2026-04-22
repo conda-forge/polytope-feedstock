@@ -5,22 +5,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/polytope/polytope-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/p/polytope/polytope-{{ version }}.tar.gz
   sha256: 75712395592e43703986e707474bde962bb6491c09f4bdccfc0ebd4c6c387f09
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install ."
 
 requirements:
   host:
     - pip
-    - python >=2.7,<3.12
+    - python {{ python_min }}
   run:
     - networkx >=1.6
     - numpy >=1.10.0
-    - python >=2.7,<3.12
+    - python >={{ python_min }},<3.12
     - scipy >=0.18.0
     - cvxopt >=1.2.5
     - pytest
@@ -32,6 +32,7 @@ test:
   requires:
     - nose
     - matplotlib-base >=2.0.0
+    - python {{ python_min }}
   commands:
     - python -m nose tests/
   source_files:
